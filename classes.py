@@ -38,7 +38,7 @@ class board:
         self.colSum = [0 for i in range(size)]
         self.curRowSum = [0 for i in range(size)]
         self.curColSum = [0 for i in range (size)]
-        self.set_sum(size)
+        # self.set_sum(size)
         self.set_cell_value(size)
 
     def set_sum(self, size):
@@ -46,6 +46,10 @@ class board:
         self.rowSum = [int(a) for a in str]
         str = (input("nhap cac gia tri cua cot: ")).split(" ")
         self.colSum = [int(a) for a in str]
+
+    def set_sum(self, rowSum, colSum):
+        self.rowSum = rowSum
+        self.colSum = colSum
 
     def set_cell_value(self, size):
         for i in range(size):
@@ -74,7 +78,3 @@ class board:
         for i in range((n+4)*3):
             print("-", end='')
         print()
-
-if __name__ == "__main__":
-    matrix = board(5)
-    matrix.print_board()
